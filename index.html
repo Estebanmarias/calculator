@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        .inputs{
+            align-items: center;
+        }
+    </style>
+</head>
+<body class="m-5">
+    <div class="inputs mt-5">
+        <input type="number" class="form-control w-25" placeholder="First number" id="firstNumber">
+        <input type="number" class="form-control w-25" placeholder="Second number" id="secondNumber">
+    </div>
+
+
+   <div class="mt-3">
+        <button onclick="sum()" class="btn btn-primary">Addition</button>
+        <div id="displayAddition">Your Answer will display here</div>
+   </div>
+    <div>
+        <button onclick="subtract()" class="btn btn-dark">Subtraction</button>
+        <div id="displaySubtraction">Your Answer will display here</div>
+
+    </div>
+    <div>
+        <button onclick="multiply()" class="btn btn-secondary">Multiplication</button>
+        <div id="displayMultiplication">Your Answer will display here</div>
+
+    </div>
+   <div>
+        <button onclick="division()" class="btn btn-warning">Division</button>
+        <div id="displayDivision">Your Answer will display here</div>
+
+   </div>
+    <div>
+        <button onclick="areaCircle()" class="btn btn-outline-primary">areaCircle</button>
+        <div id="displayAcircle">Your Answer will display here</div>
+    </div>
+    <div>
+        <button onclick="areaTriangle()" class="btn btn-outline-info">areaTriangle</button>
+        <div id="displayTriangle">Your Answer will display here</div>
+    </div>
+    <div>
+        <button onclick="areaSquare()" class="btn btn-outline-success">areaSquare</button>
+        <div id="displaySquare">Your Answer will display here</div>
+    </div>
+    <div>
+        <button onclick="areaQuadrilateral()" class="btn btn-secondary">areaQuadrilateral</button>
+        <div id="displayQuad">Your Answer will display here</div>
+    </div>
+    <div>
+        <button onclick="areaRhombus()" class="btn btn-success">areaRhombus</button>
+        <div id="displayRhombus">Your Answer will display here</div>
+    </div>
+    <div>
+        <button onclick="areaTrapezium()" class="btn btn-outline-dark">areaTrapezium</button>
+        <div id="displayTrap">Your Answer will display here</div>
+
+    </div>
+    <div>
+        <button onclick="BMI()" class="btn btn-outline-secondary">Body Mass Index</button>
+        <div id="displayBMI">Your Answer wil Display here</div>
+    <script>
+
+        function BMI() {
+            var weight = Number(prompt("Enter your weight"))
+            var height = Number(prompt("Enter the height"))
+            var answer = (weight*0.453592) / (height * height);
+            console.log(answer + "KG");
+            document.getElementById("displayBMI").innerHTML = answer + "KG"
+        }
+
+        function areaTrapezium() {
+            var base1 = Number(prompt("Enter Base"))
+            var base2 = Number(prompt("Enter Base"))
+            var height = Number(prompt("Enter the Height"))
+            var answer = 0.5 * (base1 + base2) * height 
+            console.log(answer + "m²");
+            document.getElementById("displayTrap").innerHTML = answer + "m²"
+        }
+
+        function areaSquare() {
+            var side = Number(prompt("Enter the Sides"))
+            var answer = (side**2)
+            console.log(answer + "m²");
+            document.getElementById("displaySquare").innerHTML = answer = "m²"
+        }
+
+        function areaQuadrilateral() {
+            var base = Number(prompt("Enter the Base"))
+            var height = Number(prompt("Enter the Height"))
+            var answer = base * (height**2)
+            console.log(answer + "m²");
+            document.getElementById("displayQuad").innerHTML = answer + "m²"
+        }
+
+        function areaRhombus() {
+            var firstDiagonal = Number(prompt("Enter the length of the Diagonal"))
+            var secondDiagonal = Number(prompt("Enter the length of the Diagonal"))
+            var answer = 0.5 * firstDiagonal * secondDiagonal
+            console.log(answer + "m²");
+            document.getElementById("displayRhombus").innerHTML = answer + "m²"
+
+        }
+
+        function areaTriangle() {
+            var base = Number(prompt("Enter the base"))
+            var height = Number(prompt("Enter the Height"))
+            var answer = 0.5 * base * height
+            console.log(answer + "m²");
+            document.getElementById("displayTriangle").innerHTML = answer + "m²"
+
+        }
+
+        function areaCircle() {
+            var pi = 22/7
+            var radius = Number (prompt("input the value"))
+            var answer = pi * (radius**2)
+            var convertedAnswer = answer.toFixed(2)
+            console.log(convertedAnswer + "cm²");
+            document.getElementById("displayCircle").innerHTML = answer + "cm²"
+        }
+        
+        function sum() { 
+            var valueOne = Number(document.getElementById("firstNumber").value)
+            var valueTwo = Number(document.getElementById("secondNumber").value)
+            var answer = valueOne + valueTwo
+            console.log(answer);
+            document.getElementById("displayAddition").innerHTML = answer
+
+        }
+
+        function subtract() {
+            var valueOne = Number(document.getElementById("firstNumber").value)
+            var valueTwo = Number(document.getElementById("secondNumber").value)
+            var answer = valueOne - valueTwo
+            console.log(answer);
+            document.getElementById("displaySubtraction").innerHTML = answer 
+
+        }
+        function multiply() {
+            var valueOne = Number(document.getElementById("firstNumber").value)
+            var valueTwo = Number(document.getElementById("secondNumber").value)
+            var answer = valueOne * valueTwo
+            console.log(answer);
+            document.getElementById("displayMultiplication").innerHTML = answer
+        }function division() {
+            var valueOne = Number(document.getElementById("firstNumber").value)
+            var valueTwo = Number(document.getElementById("secondNumber").value)
+            var answer = valueOne / valueTwo
+            console.log(answer);
+            document.getElementById("displayDivision").innerHTML = answer
+        }
+    </script>
+</body>
+</html>
